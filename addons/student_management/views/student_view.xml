@@ -1,0 +1,71 @@
+<odoo>
+	<record model='ir.ui.view' id='student_search_view'>
+		<field name='name'>student.search</field>
+		<field name='model'>sm.student</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<search>
+				<field name='name' />
+				<group>
+					<filter name="group_by_class" string="Group by class"
+						context="{'group_by': 'in_class'}" />
+				</group>
+			</search>
+
+		</field>
+	</record>
+
+	<record model='ir.ui.view' id='student_list_view'>
+		<field name='name'>student.list</field>
+		<field name='model'>sm.student</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<tree>
+				<field name='name' />
+				<field name='birthday' />
+				<field name='in_class' />
+			</tree>
+
+		</field>
+	</record>
+	<record model='ir.ui.view' id='student_kaban_view'>
+		<field name='name'>student.kaban</field>
+		<field name='model'>sm.student</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<kanban>
+				<field name="name" />
+				<field name="in_class" />
+				<templates>
+					<t t-name="kanban-box">
+						<div
+							class="oe_kanban_global_click o_kanban_record_has_image_fill o_recrutement_candidatures_kanban">
+
+							<div class="oe_kanban_details">
+								<strong class="o_kanban_record_title">
+									<field name="name" />
+								</strong>
+								<div class="o_kanban_tags_section" />
+								<ul>
+									<li>
+										Birthday:
+										<field name="birthday" />
+									</li>
+									<li>
+										Class:
+										<field name="in_class" />
+									</li>
+								</ul>
+							</div>
+						</div>
+					</t>
+				</templates>
+			</kanban>
+
+		</field>
+	</record>
+
+
+
+
+</odoo>

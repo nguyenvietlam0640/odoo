@@ -1,0 +1,39 @@
+<!-- Course records -->
+
+<odoo>
+
+	<record model="academy.course" id="course_1">
+		<field name="title">math</field>
+		<field name="description">math for high school</field>
+		<field name="price">9.99</field>
+		<field name="discount">20</field>
+	</record>
+
+
+	<record model="academy.course" id="course_2">
+		<field name="title">literate</field>
+		<field name="description">literate for high school</field>
+		<field name="price">6.99</field>
+		<field name="discount">10</field>
+	</record>
+
+	<record model="academy.course" id="course_3">
+		<field name="title">english</field>
+		<field name="description">english for high school</field>
+		<field name="price">12.99</field>
+		<field name="discount">15</field>
+	</record>
+
+
+	<record model="ir.actions.act_window" id="action_list_courses">
+		<field name="name">Courses</field>
+		<field name="res_model">academy.course</field>
+		<field name="view_mode">tree,form,search</field>
+	</record>
+
+
+	<!-- Main menu -->
+	<menuitem id='menu_root' name='Open academy'
+		action="action_list_courses" />
+
+</odoo>

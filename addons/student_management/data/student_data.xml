@@ -1,0 +1,10 @@
+<odoo>
+
+	<record model='sm.student' id='student_1'>
+		<field name='name'>Ben</field>
+		<field name='birthday'>2010-05-01</field>
+		<field name='in_class' ref='student_management.class_1' />
+	</record>
+
+
+</odoo>

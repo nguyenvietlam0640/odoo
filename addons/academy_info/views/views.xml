@@ -1,0 +1,105 @@
+<odoo>
+	<!-- Course views -->
+	<record model="ir.ui.view" id="courses_search">
+		<field name="name">course.search</field>
+		<field name="model">academy.course</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<search>
+				<field name="title" />
+				<field name="description" />
+			</search>
+		</field>
+	</record>
+	<record model="ir.ui.view" id="courses_list">
+
+		<field name="name">course.list</field>
+		<field name="model">academy.course</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<tree string="List course">
+				<field name="title" />
+				<field name="new_price" />
+				
+			</tree>
+
+		</field>
+	</record>
+
+
+
+	<record model="ir.ui.view" id="courses_form">
+		<field name="name">course.form</field>
+		<field name="model">academy.course</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<head>
+				<style>
+					.container{
+
+					color: red;
+					}
+
+					.image {
+					background-image: url("https://www.shutterstock.com/image-photo/basics-word-written-on-wood-260nw-1793155000.jpg");
+					background-color: #cccccc;
+					height: 500px;/
+					background-position:
+					center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					}
+
+
+				</style>
+			</head>
+			<body class="image">
+				<h1 class="container">Welcome to our Academy</h1>
+				<form string="Course form">
+					<group colspan="4">
+						<group colspan="2" col="2">
+							<separator string="Course information" colspan="2" />
+							<field name="title" />
+							<field name="discount" />
+							<field name="price" />
+							<field name="new_price" />
+
+							<!-- <field name="current_session" /> -->
+						</group>
+						<notebook colspan="4">
+							<page string="Description">
+								<field name="description" />
+							</page>
+						</notebook>
+					</group>
+				</form>
+			</body>
+		</field>
+	</record>
+
+	<!-- Session views -->
+	<record model="ir.ui.view" id="session_search">
+		<field name="name">session.search</field>
+		<field name="model">academy.session</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<search>
+				<field name="name" />
+			</search>
+		</field>
+	</record>
+	<record model="ir.ui.view" id="session_list">
+		<field name="name">session.list</field>
+		<field name="model">academy.session</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<tree string="List course">
+				<field name="name" />
+				<field name="start_date" />
+				<field name="duration" />
+				<field name="number_of_seats" />
+			</tree>
+		</field>
+	</record>
+
+</odoo>

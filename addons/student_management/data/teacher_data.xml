@@ -1,0 +1,17 @@
+<odoo>
+	<record model='sm.teacher' id='teacher_1'>
+		<field name='name'>Mr.Thomas</field>
+		<field name='subject'>ma</field>
+		<field name='birthday'>1995-05-01</field>
+	</record>
+
+
+	
+
+</odoo>
+
+
+
+
+
+

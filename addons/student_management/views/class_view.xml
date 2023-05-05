@@ -1,0 +1,34 @@
+<odoo>
+	<record model='ir.ui.view' id='class_search_view'>
+		<field name='name'>class.search</field>
+		<field name='model'>sm.class</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<search>
+				<field name='name' />
+				<field name='subject' />
+			</search>
+
+		</field>
+	</record>
+
+	<record model='ir.ui.view' id='class_list_view'>
+		<field name='name'>class.list</field>
+		<field name='model'>sm.class</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<tree>
+				<field name='name' />
+				<field name='teacher' />
+				<field name='subject' />
+				<field name='start_date' />
+				<field name='end_date' />
+			</tree>
+
+		</field>
+	</record>
+
+
+
+
+</odoo>

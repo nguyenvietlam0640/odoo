@@ -1,0 +1,17 @@
+
+
+
+<odoo>
+	<record model='sm.class' id='class_1'>
+		<field name='name'>hero_math_2</field>
+		<field name='subject'>ma</field>
+		<field name='start_date'>2023-05-01</field>
+		<field name='end_date'>2023-06-01</field>
+		<field name='seat'>2</field>
+		<field name='teacher' ref='student_management.teacher_1' />
+	</record>
+
+
+	
+
+</odoo>

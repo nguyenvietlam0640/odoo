@@ -1,0 +1,38 @@
+<!-- Session records -->
+<odoo>
+
+	<record model="academy.session" id="session_1">
+		<field name="name">Summer time</field>
+		<field name="start_date">2023-06-01</field>
+		<field name="duration">3</field>
+		<field name="number_of_seats">100</field>
+		<field name="current_course" ref="academy_info.course_1" />
+	</record>
+	<record model="academy.session" id="session_2">
+		<field name="name">Santa club</field>
+		<field name="start_date">2023-09-01</field>
+		<field name="duration">3</field>
+		<field name="number_of_seats">50</field>
+		<field name="current_course" ref="academy_info.course_3" />
+	</record>
+
+
+
+
+	<record model="ir.actions.act_window" id="action_list_session">
+		<field name="name">Session</field>
+		<field name="res_model">academy.session</field>
+		<field name="view_mode">tree,form,search</field>
+	</record>
+
+
+
+
+
+	<menuitem id='session_menu' parent="menu_root" name='Session'
+		action="action_list_session" />
+
+
+
+
+</odoo>

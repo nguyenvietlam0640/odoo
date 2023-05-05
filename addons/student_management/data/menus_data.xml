@@ -1,0 +1,36 @@
+<odoo>
+
+	<record model="ir.actions.act_window"
+		id="action_listing_student">
+		<field name="name">Student information</field>
+		<field name="res_model">sm.student</field>
+		<field name="view_mode">kanban,tree,form,search</field>
+	</record>
+
+	<menuitem id='pr_student_manage' name='Student Management'
+		web_icon="student_management,static/description/icon.png"
+		action='action_listing_student' />
+
+	<record model="ir.actions.act_window"
+		id="action_listing_teacher">
+		<field name="name">Teacher information</field>
+		<field name="res_model">sm.teacher</field>
+		<field name="view_mode">tree,form,search</field>
+	</record>
+
+	<menuitem id='se_teacher_manage'
+		parent='student_management.pr_student_manage' name='Teacher'
+		action='action_listing_teacher' />
+
+
+	<record model="ir.actions.act_window" id="action_listing_class">
+		<field name="name">Class information</field>
+		<field name="res_model">sm.class</field>
+		<field name="view_mode">tree,form,search</field>
+	</record>
+
+	<menuitem id='se_class_manage'
+		parent='student_management.pr_student_manage' name='Class'
+		action='action_listing_class' />
+
+</odoo>
