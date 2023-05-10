@@ -1,0 +1,18 @@
+<odoo>
+	<record model='res.groups' id='group_sm_student_teacher'>
+		<field name='name'>Student management/ student, teacher</field>
+	</record>
+	<record model='res.groups' id='group_sm_manager'>
+		<field name='name'>Student management/ manager</field>
+	</record>
+
+
+	<record model='ir.rule' id='student_record_rule'>
+		<field name='name'>student.record.rule</field>
+		<field name='model_id' ref='model_sm_student' />
+		<field name='domain_force'>[('email','=','user.email')]</field>
+	</record>
+
+
+
+</odoo>

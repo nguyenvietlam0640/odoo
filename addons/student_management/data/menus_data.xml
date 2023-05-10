@@ -33,4 +33,6 @@
 		parent='student_management.pr_student_manage' name='Class'
 		action='action_listing_class' />
 
+
+
 </odoo>

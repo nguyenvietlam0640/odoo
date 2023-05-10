@@ -81,6 +81,7 @@ Tính năng chính
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        ''
         'data/menus_data.xml',
         'data/teacher_data.xml',
         'data/class_data.xml',
@@ -89,6 +90,10 @@ Tính năng chính
         'views/teacher_view.xml',
         'views/class_view.xml',
         'views/templates.xml',
+        'wizards/update_discount_wizard_view.xml',
+        'wizards/create_multi_class_wizard_view.xml',
+        'security/student_management_security_groups.xml',
+        'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode
     'demo': [

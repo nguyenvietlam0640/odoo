@@ -8,7 +8,7 @@
 				<field name='name' />
 				<group>
 					<filter name="group_by_class" string="Group by class"
-						context="{'group_by': 'in_class'}" />
+						context="{'group_by': 'class_id'}" />
 				</group>
 			</search>
 
@@ -23,24 +23,98 @@
 			<tree>
 				<field name='name' />
 				<field name='birthday' />
-				<field name='in_class' />
+				<field name="email" />
+				<field name='class_id' />
 			</tree>
 
 		</field>
 	</record>
+
+	<!-- tree view inheritance -->
+
+	<record model='ir.ui.view' id='student_list_view_extend'>
+		<field name='name'>student.list.extend</field>
+		<field name='model'>sm.student</field>
+		<field name='inherit_id' ref='student_list_view' />
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+
+			<field name='birthday' position='after'>
+				<field name='number' />
+			</field>
+
+		</field>
+	</record>
+
+
+
+
+
+	<record model='ir.ui.view' id='student_form_view'>
+		<field name='name'>student.form</field>
+		<field name='model'>sm.student</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<form>
+				<group col="4">
+					<group colspan="2">
+						<h1 colspan="2">
+							<field placeholder='Student name' name="name" />
+						</h1>
+						<h3 colspan="2">
+							Student
+						</h3>
+					</group>
+					<group colspan="2">
+						<field name="photo" nolabel="1" widget="image"
+							class="oe_avatar" />
+					</group>
+
+
+				</group>
+				<group col="4">
+					<field colspan="3" name='number' />
+					<field colspan="3" name="email" />
+					<field colspan="3" name='birthday' />
+					<field colspan="3" name='class_id' />
+					<field colspan="3" name='rel_empty_seat' />
+				</group>
+			</form>
+		</field>
+	</record>
+
+
 	<record model='ir.ui.view' id='student_kaban_view'>
 		<field name='name'>student.kaban</field>
 		<field name='model'>sm.student</field>
 		<field name="priority" eval="16" />
 		<field name="arch" type="xml">
+
+
 			<kanban>
+				<field name="id" />
 				<field name="name" />
-				<field name="in_class" />
+				<field name='photo' />
+				<field name='number' />
+				<field name='email' />
+				<field name="class_id" />
 				<templates>
 					<t t-name="kanban-box">
-						<div
-							class="oe_kanban_global_click o_kanban_record_has_image_fill o_recrutement_candidatures_kanban">
+						<div class="oe_kanban_global_click">
+							<div class="o_kanban_image">
+								<t t-if="record.photo.raw_value">
 
+									<img
+										t-att-src="kanban_image('sm.student', 'photo', record.id.raw_value)"
+										alt="student" class="o_image_64_contain" />
+
+								</t>
+								<t t-else="">
+									<img class="o_kanban_image"
+										t-att-src='_s + "/student_management/static/src/img/default_img.png"'
+										alt="Default" />
+								</t>
+							</div>
 							<div class="oe_kanban_details">
 								<strong class="o_kanban_record_title">
 									<field name="name" />
@@ -48,12 +122,16 @@
 								<div class="o_kanban_tags_section" />
 								<ul>
 									<li>
-										Birthday:
-										<field name="birthday" />
+										Phone:
+										<field name="number" />
+									</li>
+									<li>
+										Email:
+										<field name="email" />
 									</li>
 									<li>
 										Class:
-										<field name="in_class" />
+										<field name="class_id" />
 									</li>
 								</ul>
 							</div>
@@ -61,11 +139,6 @@
 					</t>
 				</templates>
 			</kanban>
-
 		</field>
 	</record>
-
-
-
-
 </odoo>

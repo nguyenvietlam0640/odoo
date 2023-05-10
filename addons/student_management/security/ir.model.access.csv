@@ -1,2 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_student_management_student_management,student_management.student_management,model_student_management_student_management,base.group_user,1,1,1,1
+access_sm_student,access.sm.student,model_sm_student,student_management.group_sm_student_teacher,1,0,0,0
+access_sm_teacher,access.sm.teacher,model_sm_teacher,student_management.group_sm_student_teacher,1,0,0,0
+access_sm_class,access.sm.class,model_sm_class,student_management.group_sm_student_teacher,1,0,0,0
+access_sm_student_ma,access.sm.student.ma,model_sm_student,student_management.group_sm_manager,1,1,1,1
+access_sm_teacher_ma,access.sm.teacher.ma,model_sm_teacher,student_management.group_sm_manager,1,1,1,1
+access_sm_class_ma,access.sm.class.ma,model_sm_class,student_management.group_sm_manager,1,1,1,1

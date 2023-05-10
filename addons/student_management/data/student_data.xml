@@ -1,9 +1,11 @@
-<odoo>
+<odoo noupdate="1">
 
 	<record model='sm.student' id='student_1'>
 		<field name='name'>Ben</field>
 		<field name='birthday'>2010-05-01</field>
-		<field name='in_class' ref='student_management.class_1' />
+		<field name='email'>lamnv0640@gmail.com</field>
+		<field name='number'>20100501</field>
+		<field name='class_id' ref='student_management.class_1' />
 	</record>
 
 

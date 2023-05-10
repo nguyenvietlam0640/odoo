@@ -1,0 +1,28 @@
+<odoo>
+	<record model='ir.ui.view' id='create_multi_class_form'>
+		<field name='name'>create_multi.class.form</field>
+		<field name='model'>sm.create_multi.class.wiz</field>
+		<field name='arch' type='xml'>
+			<form>
+				<group>
+					<field name='name' />
+				</group>
+				<footer>
+					<button string='Create multiple class'
+						class="btn btn-success" type='object' name='create_classes' />
+					
+					<button string='Cancel' special='cancel' />
+				</footer>
+			</form>
+		</field>
+	</record>
+
+
+	<record model='ir.actions.act_window'
+		id='create_multi_class_action'>
+		<field name='name'>create.multi.class.wizard.action</field>
+		<field name='res_model'>sm.create_multi.class.wiz</field>
+		<field name='view_mode'>form</field>
+		<field name='target'>new</field>
+	</record>
+</odoo>

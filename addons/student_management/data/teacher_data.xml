@@ -1,4 +1,4 @@
-<odoo>
+<odoo noupdate="1">
 	<record model='sm.teacher' id='teacher_1'>
 		<field name='name'>Mr.Thomas</field>
 		<field name='subject'>ma</field>

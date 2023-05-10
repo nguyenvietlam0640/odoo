@@ -1,0 +1,29 @@
+<odoo>
+	<record model='ir.ui.view' id='update_discount_wizard_form'>
+		<field name='name'>update.discount.wizard.form</field>
+		<field name='model'>sm.update.discount.wiz</field>
+		<field name='arch' type='xml'>
+			<form>
+				<group>
+					<field name='discount' />
+				</group>
+				<footer>
+					<button string='Update discount to this class'
+						class="btn btn-success" type='object' name='update_fee' />
+					<button string='Update discount to all class'
+						class="btn btn-primary" type='object' name='update_all_fee' />
+					<button string='Cancel' special='cancel' />
+				</footer>
+			</form>
+		</field>
+	</record>
+
+
+	<record model='ir.actions.act_window'
+		id='update_discount_wizard_action'>
+		<field name='name'>update.discount.wizard.action</field>
+		<field name='res_model'>sm.update.discount.wiz</field>
+		<field name='view_mode'>form</field>
+		<field name='target'>new</field>
+	</record>
+</odoo>

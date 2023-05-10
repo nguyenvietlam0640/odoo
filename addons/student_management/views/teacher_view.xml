@@ -21,7 +21,7 @@
 				<field name='name' />
 				<field name='subject' />
 				<field name='birthday' />
-				<field name='in_classes' />
+				<field name='class_ids' />
 			</tree>
 
 		</field>
