@@ -1,0 +1,430 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* student_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-10 08:56+0000\n"
+"PO-Revision-Date: 2023-05-10 08:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: student_management
+#: model:sm.student,number:student_management.student_1
+msgid "20100501"
+msgstr ""
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.class_form_view
+msgid "Advance"
+msgstr "Nâng cao"
+
+#. module: student_management
+#: model:sm.student,name:student_management.student_1
+msgid "BEN"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_human__birthday
+#: model:ir.model.fields,field_description:student_management.field_sm_student__birthday
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher__birthday
+msgid "Birthday"
+msgstr "Năm sinh"
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.create_multi_class_form
+#: model_terms:ir.ui.view,arch_db:student_management.update_discount_wizard_form
+msgid "Cancel"
+msgstr "Hủy bỏ "
+
+#. module: student_management
+#: model:ir.ui.menu,name:student_management.se_class_manage
+msgid "Class"
+msgstr "Lớp"
+
+#. module: student_management
+#: model:ir.actions.act_window,name:student_management.action_listing_class
+msgid "Class information"
+msgstr "Thông tin lớp học"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__name
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__name
+#: model_terms:ir.ui.view,arch_db:student_management.class_form_view
+msgid "Class name"
+msgstr "Tên lớp"
+
+#. module: student_management
+#: model:ir.model.constraint,message:student_management.constraint_sm_class_check_name_unique
+msgid "Class name must be unique, Given existed name."
+msgstr "Tên lớp tồn tại, vui lòng thử một tên khác"
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.student_kaban_view
+msgid "Class:"
+msgstr "lớp"
+
+#. module: student_management
+#: model:ir.model.fields.selection,name:student_management.selection__sm_class__status__cs
+#: model:ir.model.fields.selection,name:student_management.selection__sm_create_multi_class_wiz__status__cs
+msgid "Comming soon"
+msgstr "sắp diễn ra"
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.class_form_view
+msgid "Create classes"
+msgstr "tạo nhiều lớp"
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.create_multi_class_form
+msgid "Create multiple class"
+msgstr "tạo nhiều lớp"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__create_uid
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__create_uid
+#: model:ir.model.fields,field_description:student_management.field_sm_student__create_uid
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher__create_uid
+#: model:ir.model.fields,field_description:student_management.field_sm_update_discount_wiz__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi "
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__create_date
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__create_date
+#: model:ir.model.fields,field_description:student_management.field_sm_student__create_date
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher__create_date
+#: model:ir.model.fields,field_description:student_management.field_sm_update_discount_wiz__create_date
+msgid "Created on"
+msgstr "Tạo vào"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher__class_ids
+msgid "Current classes"
+msgstr "NHững lớp hiện tại"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__currency_id
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__currency_id
+msgid "Current monetary"
+msgstr "Loại tiền tệ"
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.student_kaban_view
+msgid "Default"
+msgstr "Mặc định"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__discount
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__discount
+msgid "Discount(%)"
+msgstr "Giảm giá(%)"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__display_name
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__display_name
+#: model:ir.model.fields,field_description:student_management.field_sm_human__display_name
+#: model:ir.model.fields,field_description:student_management.field_sm_student__display_name
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher__display_name
+#: model:ir.model.fields,field_description:student_management.field_sm_update_discount_wiz__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_student__email
+msgid "Email"
+msgstr ""
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.student_kaban_view
+msgid "Email:"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_student__rel_empty_seat
+msgid "Empty seat in this class"
+msgstr "Số ghế trống trong lớp này"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__empty_seat
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__empty_seat
+msgid "Empty_seat"
+msgstr "Số ghế trống"
+
+#. module: student_management
+#: model:ir.model.fields.selection,name:student_management.selection__sm_class__status__en
+#: model:ir.model.fields.selection,name:student_management.selection__sm_create_multi_class_wiz__status__en
+msgid "End"
+msgstr "Kết thúc"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__end_date
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__end_date
+msgid "End date"
+msgstr "Ngày kết thúc"
+
+#. module: student_management
+#: model:ir.model.fields.selection,name:student_management.selection__sm_class__subject__eng
+#: model:ir.model.fields.selection,name:student_management.selection__sm_create_multi_class_wiz__subject__eng
+#: model:ir.model.fields.selection,name:student_management.selection__sm_teacher__subject__eng
+msgid "English"
+msgstr "Tiếng anh"
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.student_search_view
+msgid "Group by class"
+msgstr "Gộp bởi lớp"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__id
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__id
+#: model:ir.model.fields,field_description:student_management.field_sm_human__id
+#: model:ir.model.fields,field_description:student_management.field_sm_student__id
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher__id
+#: model:ir.model.fields,field_description:student_management.field_sm_update_discount_wiz__id
+msgid "ID"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_student__class_id
+msgid "In class"
+msgstr "Trong lớp"
+
+#. module: student_management
+#: model:ir.model.fields.selection,name:student_management.selection__sm_class__status__ig
+#: model:ir.model.fields.selection,name:student_management.selection__sm_create_multi_class_wiz__status__ig
+msgid "In progress"
+msgstr "Đang diễn ra"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class____last_update
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz____last_update
+#: model:ir.model.fields,field_description:student_management.field_sm_human____last_update
+#: model:ir.model.fields,field_description:student_management.field_sm_student____last_update
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher____last_update
+#: model:ir.model.fields,field_description:student_management.field_sm_update_discount_wiz____last_update
+msgid "Last Modified on"
+msgstr "Lần cuối thay đổi"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__write_uid
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__write_uid
+#: model:ir.model.fields,field_description:student_management.field_sm_student__write_uid
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher__write_uid
+#: model:ir.model.fields,field_description:student_management.field_sm_update_discount_wiz__write_uid
+msgid "Last Updated by"
+msgstr "NGười dùng cuối thay đổi"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__write_date
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__write_date
+#: model:ir.model.fields,field_description:student_management.field_sm_student__write_date
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher__write_date
+#: model:ir.model.fields,field_description:student_management.field_sm_update_discount_wiz__write_date
+msgid "Last Updated on"
+msgstr "Lần cuối cập nhật"
+
+#. module: student_management
+#: model:ir.model.fields.selection,name:student_management.selection__sm_class__subject__lit
+#: model:ir.model.fields.selection,name:student_management.selection__sm_create_multi_class_wiz__subject__lit
+#: model:ir.model.fields.selection,name:student_management.selection__sm_teacher__subject__lit
+msgid "Literate"
+msgstr "Ngữ văn"
+
+#. module: student_management
+#: model:ir.model.fields.selection,name:student_management.selection__sm_class__subject__ma
+#: model:ir.model.fields.selection,name:student_management.selection__sm_create_multi_class_wiz__subject__ma
+#: model:ir.model.fields.selection,name:student_management.selection__sm_teacher__subject__ma
+msgid "Math"
+msgstr "Toán học"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_human__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_student__number
+msgid "Number phone"
+msgstr "Sdt"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__original_price
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__original_price
+msgid "Original price"
+msgstr "Giá gốc"
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.student_kaban_view
+msgid "Phone:"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_human__photo
+#: model:ir.model.fields,field_description:student_management.field_sm_student__photo
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher__photo
+msgid "Photo"
+msgstr "Ảnh đại diện"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__fee
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__fee
+msgid "Registration fee"
+msgstr "Giá chính thức"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__seat
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__seat
+msgid "Seat"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model.fields.selection,name:student_management.selection__sm_class__status__so
+#: model:ir.model.fields.selection,name:student_management.selection__sm_create_multi_class_wiz__status__so
+msgid "Sold out"
+msgstr "Hết chỗ"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__start_date
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__start_date
+msgid "Start date"
+msgstr "ngày bắt đầu"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__status
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__status
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.student_form_view
+msgid "Student"
+msgstr "Học sinh"
+
+#. module: student_management
+#: model:ir.ui.menu,name:student_management.pr_student_manage
+msgid "Student Management"
+msgstr "Quản lí học sinh"
+
+#. module: student_management
+#: model:ir.actions.act_window,name:student_management.action_listing_student
+msgid "Student information"
+msgstr "Thông tin học sinh"
+
+#. module: student_management
+#: model:res.groups,name:student_management.group_sm_manager
+msgid "Student management/ manager"
+msgstr ""
+
+#. module: student_management
+#: model:res.groups,name:student_management.group_sm_student_teacher
+msgid "Student management/ student, teacher"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_student__name
+#: model_terms:ir.ui.view,arch_db:student_management.student_form_view
+msgid "Student name"
+msgstr "Tên học sinh"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__student_ids
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__student_ids
+#: model_terms:ir.ui.view,arch_db:student_management.class_form_view
+msgid "Students"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__subject
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__subject
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher__subject
+msgid "Subject"
+msgstr "Môn học"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_class__teacher_id
+#: model:ir.model.fields,field_description:student_management.field_sm_create_multi_class_wiz__teacher_id
+#: model:ir.ui.menu,name:student_management.se_teacher_manage
+msgid "Teacher"
+msgstr "Giáo viên"
+
+#. module: student_management
+#: model:ir.actions.act_window,name:student_management.action_listing_teacher
+msgid "Teacher information"
+msgstr "Thông tin giáo viên"
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_teacher__name
+msgid "Teacher name"
+msgstr "Tên giáo viên"
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.class_form_view
+msgid "Update discount"
+msgstr "Cập nhật giảm giá"
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.update_discount_wizard_form
+msgid "Update discount to all class"
+msgstr ""
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.update_discount_wizard_form
+msgid "Update discount to this class"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model.fields,field_description:student_management.field_sm_update_discount_wiz__discount
+msgid "Update discount(%)"
+msgstr ""
+
+#. module: student_management
+#: model:ir.actions.act_window,name:student_management.create_multi_class_action
+msgid "create.multi.class.wizard.action"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model,name:student_management.model_sm_class
+msgid "sm.class"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model,name:student_management.model_sm_create_multi_class_wiz
+msgid "sm.create_multi.class.wiz"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model,name:student_management.model_sm_human
+msgid "sm.human"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model,name:student_management.model_sm_student
+msgid "sm.student"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model,name:student_management.model_sm_teacher
+msgid "sm.teacher"
+msgstr ""
+
+#. module: student_management
+#: model:ir.model,name:student_management.model_sm_update_discount_wiz
+msgid "sm.update.discount.wiz"
+msgstr ""
+
+#. module: student_management
+#: model_terms:ir.ui.view,arch_db:student_management.student_kaban_view
+msgid "student"
+msgstr "Học sinh"
+
+#. module: student_management
+#: model:ir.actions.act_window,name:student_management.update_discount_wizard_action
+msgid "update.discount.wizard.action"
+msgstr ""

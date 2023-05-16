@@ -58,6 +58,9 @@
 			<form>
 				<group col="4">
 					<group colspan="2">
+						<h1 style='color: green;'>
+							<field name='user_banner' />
+						</h1>
 						<h1 colspan="2">
 							<field placeholder='Student name' name="name" />
 						</h1>
@@ -110,7 +113,7 @@
 
 								</t>
 								<t t-else="">
-									<img class="o_kanban_image"
+									<img
 										t-att-src='_s + "/student_management/static/src/img/default_img.png"'
 										alt="Default" />
 								</t>

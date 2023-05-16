@@ -4,10 +4,31 @@ from odoo import models, fields, api, modules
 
 from odoo.exceptions import ValidationError
 from datetime import datetime
+from dateutil.relativedelta import relativedelta
 import base64
 
 subjects = [('ma', 'Math'), ('eng', 'English'), ('lit', 'Literate')]
 status_list = [('en', 'End'), ('ig', 'In progress'), ('so', 'Sold out'), ('cs', 'Comming soon')]
+
+
+class damn (models.Model):
+    _name = 'sm.damn'
+    inter = fields.Integer(compute='_compute_id')
+    onchange_fields = fields.Integer()
+    compute_fields = fields.Integer(compute='_compute_def', store=True)
+      
+    @api.onchange('inter')
+    def _onchange_def(self):
+        self.onchange_fields = self.inter * 2
+    
+    @api.depends('inter')
+    def _compute_def(self):
+        for r in self:
+            r.compute_fields = r.inter * 2
+    
+    @api.depends_context('uid')
+    def _compute_id(self): 
+        self.inter = self._context.get('uid')
 
 
 class BasicHuman(models.AbstractModel):
@@ -28,11 +49,12 @@ class Student(models.Model):
     _inherit = 'sm.human'
     name = fields.Char(string='Student name', required=True, translate=True)
     
-    class_id = fields.Many2one(string='In class', comodel_name='sm.class', ondelete='cascade', required=True)
+    class_id = fields.Many2one(string='In class', comodel_name='sm.class', ondelete='cascade', required=True, domain=[('empty_seat', '>', '0')])
     rel_empty_seat = fields.Integer(related='class_id.empty_seat', string='Empty seat in this class')
     email = fields.Char(string='Email')
     number = fields.Char(string='Number phone', translate=True)
-
+    user_banner = fields.Text(compute='_compute_user_banner')
+    
     @api.constrains('class_id')
     def _check_seat(self):
         if self.rel_empty_seat <= -1:
@@ -44,14 +66,20 @@ class Student(models.Model):
         if not self.photo:
             with open(modules.get_module_resource('student_management', 'static/src/img', 'default_img.png'), 'rb') as f:
                 self.photo = base64.b64encode(f.read())
-    
+
     @api.model
     def create(self, vals):
+        print(vals)
         vals['name'] = vals['name'].upper()
         return super(Student, self).create(vals)
-# class StudentAdvance(models.Model):
-#     # declare can see student information 
-#     pass
+    
+    @api.depends_context('uid')
+    def _compute_user_banner(self):
+        user_id = self._context.get('uid')
+        user = self.env['res.users'].browse(user_id)
+        
+        for r in self:
+            r.user_banner = f'Welcome {user.login}'
 
 
 class Teacher(models.Model):
@@ -75,22 +103,31 @@ class Class(models.Model):
     
     name = fields.Char(string='Class name', required=True)
     teacher_id = fields.Many2one(string='Teacher', comodel_name='sm.teacher', ondelete='set null')
-    subject = fields.Selection(subjects, string='Subject', required=True)
+    subject = fields.Selection(subjects, string='Subject', required=True, default='ma')
 
     start_date = fields.Date(string='Start date', default=datetime.today(), required=True)
-    end_date = fields.Date(string='End date', default=datetime.today(), required=True)
+    end_date = fields.Date(string='End date', default=datetime.today() + relativedelta(months=+3), required=True)
     
-    seat = fields.Integer(string='Seat', required=True, default=10)
+    seat = fields.Integer(string='Seat', required=True, default=10, copy=False)
     empty_seat = fields.Integer(string='Empty_seat', compute='_compute_empty_seat', store=True)
     
     status = fields.Selection(status_list, string='Status', compute='_compute_status', store=True)
     
-    student_ids = fields.One2many(string='Students', comodel_name='sm.student', inverse_name='class_id')
+    student_ids = fields.One2many(string='Students', comodel_name='sm.student', inverse_name='class_id', copy=False)
     
     currency_id = fields.Many2one('res.currency', string='Current monetary', default=23)
     original_price = fields.Monetary(string='Original price', currency_field='currency_id')
     discount = fields.Integer(string='Discount(%)')
-    fee = fields.Monetary(string='Registration fee' , currency_field='currency_id', compute='_compute_fee', store=True)
+    fee = fields.Monetary(string='Registration fee' , currency_field='currency_id', compute='_compute_fee', inverse='_inverse_original_price' , store=True)
+    
+    @api.onchange('subject')
+    def _onchange_subject(self):
+        domain = {'teacher_id':[('subject', '=', self.subject)]}
+        return {'domain': domain}
+    
+    def _inverse_original_price(self):
+        for r in self:
+            r.original_price = r.fee / (1 - r.discount / 100) 
     
     @api.constrains('start_date', 'end_date')
     def _check_valid_date(self):
@@ -124,6 +161,23 @@ class Class(models.Model):
                 r.status = 'so'
             else:
                 r.status = 'ig'
+                
+    @api.returns('self', lambda value: value.id)
+    def copy(self, default=None):
+        if not default:
+            default = {'name': f'{self.name}(copy)'}
+        return super(Class, self).copy(default)
+    
+    def delete(self):
+       
+        self.search([]).unlink()
+        
+        return {
+        "type": "ir.actions.act_url",
+        "url": "http://localhost:8069/web?#action=393&model=sm.class&view_type=list",
+        "target": "self",
+
+        }
     
     def open_update_discount_wizard(self):
         
@@ -137,3 +191,28 @@ class Class(models.Model):
                 'res_model': 'sm.create_multi.class.wiz',
                 'view_mode':'form',
                 'target':'new'}
+
+    def redirect_more_info(self):
+        return {
+            "type": "ir.actions.act_url",
+            "url": "https://viindoo.com",
+            "target": "new",
+
+            }
+    
+    def test(self):
+        
+        records = self.env['sm.damn'].search([])
+        
+        for r in records:
+            r.inter = 50
+            
+        a = 1
+    
+    def test2(self):
+        print(self.ids)
+        print(self.exists())
+        print(self.env['sm.class'].search([('teacher_id', '=', 1)]).exists())
+        print(self.env['sm.class'].search([('teacher_id', '=', 1)]).name_get())
+        print(self.env['sm.class'].search([('teacher_id', '=', 1)]).ensure_one())
+        

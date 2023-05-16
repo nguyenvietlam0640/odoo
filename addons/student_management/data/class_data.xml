@@ -28,4 +28,34 @@
 		<field name='teacher_id' ref='student_management.teacher_1' />
 	</record>
 
+
+
+	<record model='sm.damn' id='damn_2'>
+		<field name='inter'>2</field>
+	</record>
+	<record id='act' model="ir.actions.act_window">
+		<field name='name'>act</field>
+		<field name='res_model'>sm.damn</field>
+		<field name='view_mode'>tree,form</field>
+	</record>
+	<menuitem id='damnmenu' parent='pr_student_manage'
+		action='act' />
+
+
+
+	<record model='ir.ui.view' id='damn_list_view'>
+		<field name='name'>damn.list</field>
+		<field name='model'>sm.damn</field>
+		<field name="priority" eval="16" />
+		<field name="arch" type="xml">
+			<tree>
+				<field name='inter' />
+				<field name='compute_fields' />
+				<field name='onchange_fields' />
+			</tree>
+		</field>
+	</record>
+
+	
+
 </odoo>

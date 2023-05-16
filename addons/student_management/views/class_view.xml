@@ -12,6 +12,8 @@
 		</field>
 	</record>
 
+
+
 	<record model='ir.ui.view' id='class_list_view'>
 		<field name='name'>class.list</field>
 		<field name='model'>sm.class</field>
@@ -22,18 +24,41 @@
 				<field name='teacher_id' />
 				<field name='subject' />
 				<field name='fee' />
-
-
 				<field name="status" />
-
-
-
-
-
 			</tree>
-
 		</field>
 	</record>
+
+
+	<record id='class_calendar_view' model="ir.ui.view">
+		<field name="name">class.calendar.view</field>
+		<field name="model">sm.class</field>
+		<field name="arch" type="xml">
+			<calendar string="Calendar class view"
+				date_start="start_date" date_stop="end_date" event_open_popup="true"
+				mode="month" color="name" quick_add="False">
+				<field name="name" />
+				<field name='status' />
+				<field name='start_date' />
+				<field name='end_date' />
+			</calendar>
+		</field>
+	</record>
+
+
+
+	<record id='class_graph_view' model="ir.ui.view">
+		<field name="name">class.graph.view</field>
+		<field name="model">sm.class</field>
+		<field name="arch" type="xml">
+			<graph disable_linking='1'>
+				<field name='name' />
+			</graph>
+		</field>
+	</record>
+
+
+
 	<record model='ir.ui.view' id='class_form_view'>
 		<field name='name'>class.form</field>
 		<field name='model'>sm.class</field>
@@ -41,22 +66,22 @@
 		<field name="arch" type="xml">
 			<form>
 				<group col="4">
+
 					<h2 colspan="2">
 						<field placeholder="Class name" name='name' />
 					</h2>
-					<group colspan="2">
 
+					<group colspan="2">
 						<field style='color: green;' name='status'
 							attrs="{'invisible':[('status', '!=', 'ig')]}" />
 						<field style='color: red;' name='status'
 							attrs="{'invisible':[('status', '=', 'ig')]}" />
-
 					</group>
 
 
 					<group colspan='2'>
-						<field name='teacher_id' />
 						<field name='subject' />
+						<field name='teacher_id' />
 						<field name='seat' />
 						<field name='empty_seat' />
 					</group>
@@ -79,15 +104,22 @@
 						<br />
 						<hr style='height: 3px;' />
 						<br />
-						<group>
-							<button class="btn btn-secondary" string='Update discount'
-								name='open_update_discount_wizard' type='object' />
-							<button class="btn btn-info"
+						<group col='3'>
+							<button colspan='1' class="btn btn-secondary"
+								string='Update discount' name='open_update_discount_wizard'
+								type='object' context="{'active_id':id}" />
+							<button colspan='1' class="btn btn-info"
 								string='Create classes' name='open_create_multi_class_wizard'
 								type='object' />
+							<button colspan='1' class="btn btn-primary"
+								string='More infomation' name='redirect_more_info' type='object' />
+							<button colspan='1' class="btn btn-danger"
+								string='Delete all class' name='delete' type='object' />
+							<button colspan='1' class="btn btn-primary" string='Test'
+								name='test' type='object' />
+							<button colspan='1' class="btn btn-primary" string='Test2'
+								name='test2' type='object' />
 						</group>
-
-
 					</group>
 
 					<notebook colspan="4">
@@ -95,10 +127,9 @@
 							<field name='student_ids' />
 						</page>
 					</notebook>
+
 				</group>
 			</form>
 		</field>
 	</record>
-
-
 </odoo>

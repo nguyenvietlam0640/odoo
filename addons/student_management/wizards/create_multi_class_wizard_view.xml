@@ -6,12 +6,14 @@
 			<form>
 				<group>
 					<field name='name' />
+					<field name='quantity' />
 				</group>
 				<footer>
 					<button string='Create multiple class'
 						class="btn btn-success" type='object' name='create_classes' />
-					
-					<button string='Cancel' special='cancel' />
+					<button string='Get default'
+						class="btn btn-info" type='object' name='get_default' />
+					<button string='Cancel' special='cancel' />	
 				</footer>
 			</form>
 		</field>

@@ -1,4 +1,4 @@
-<odoo noupdate="1">
+<odoo>
 
 	<record model='sm.student' id='student_1'>
 		<field name='name'>Ben</field>
@@ -7,6 +7,8 @@
 		<field name='number'>20100501</field>
 		<field name='class_id' ref='student_management.class_1' />
 	</record>
+	
+	
 
 
 </odoo>

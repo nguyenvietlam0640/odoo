@@ -26,7 +26,7 @@
 	<record model="ir.actions.act_window" id="action_listing_class">
 		<field name="name">Class information</field>
 		<field name="res_model">sm.class</field>
-		<field name="view_mode">tree,form,search</field>
+		<field name="view_mode">calendar,tree,form,search,graph</field>
 	</record>
 
 	<menuitem id='se_class_manage'
