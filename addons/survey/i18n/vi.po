@@ -193,7 +193,7 @@ msgid ""
 "                                    <span class=\"text-muted\">Registered</span>"
 msgstr ""
 "<br/>\n"
-"                                    <span class=\"text-muted\">Đã tham gia</span>"
+"                                    <span class=\"text-muted\">Đã ghi nhận</span>"
 
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.survey_survey_view_kanban
