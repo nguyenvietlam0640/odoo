@@ -484,7 +484,7 @@ msgstr "<span class=\"text-muted\">Câu hỏi</span>"
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.survey_survey_view_kanban
 msgid "<span class=\"text-muted\">Registered</span>"
-msgstr "<span class=\"text-muted\">Đã tham gia</span>"
+msgstr "<span class=\"text-muted\">Đã ghi nhận</span>"
 
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.survey_survey_view_kanban
