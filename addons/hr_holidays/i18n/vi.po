@@ -4326,7 +4326,7 @@ msgstr ""
 #: code:addons/hr_holidays/models/hr_leave.py:0
 #, python-format
 msgid "You are not allowed to request a time off on a Stress Day."
-msgstr ""
+msgstr "Bạn không thể yêu cầu nghỉ phép vào Stress Day."
 
 #. module: hr_holidays
 #. odoo-python
